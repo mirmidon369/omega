@@ -84,6 +84,7 @@ Route::group(['middleware' => ['auth']],function(){
 	route::resource('evolucion','Internacion\EvolucionesControladorABM');
 
 	route::resource('medicion','Mediciones\MedicionesControladorABM');
+	route::get('rptmedicion/{id_persona}','Mediciones\MedicionesControlador@reportemediciones');
 
 	route::resource('imagen','PictureController');
 
