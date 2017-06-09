@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" Content-type: "image/jpeg" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" "Content-type: image/jpeg" content="text/html; charset=utf-8"/>
         <title>REPORTE DE MEDICIONES</title>
     <!-- {!! Html::style('assets/css/pdf.css') !!} -->
   </head>
@@ -9,24 +9,24 @@
       <div id="details" class="clearfix">
         <div id="invoice">
           <h1>REPORTE</h1>
-          <div class="date">Date of Invoice: {{ $date }}</div>
+          <div class="date">Fecha de Reporte: {{ $date }}</div>
         </div>
       </div>
-       @include('persona.LstDatosBasicos')
-      <table border="0" cellspacing="0" cellpadding="0">
+      @include('persona.LstDatosBasicos')
+      <table border="1">
         <thead>
           <tr>
             <th >#</th>
             <th >GLASGOW</th>
-            <th >FRECUENCIA CARDIACA</th>
-            <th >FRECUENCIA RESPIRATORIA</th>
+            <th >FREC. CARDIACA</th>
+            <th >FREC. RESPIRATORIA</th>
             <th >PRESION SISTOLICA </th>
-            <th >PRESION SISTOLICA </th>
-            <th >PRESION SISTOLICA </th>
-            <th >PRESION SISTOLICA </th>
-            <th >PRESION SISTOLICA </th>
-            <th >PRESION SISTOLICA </th>
-            <th >PRESION SISTOLICA </th>
+            <th >FREC. CARDI </th>
+            <th >FREC. RESPI</th>
+            <th >TEMPERATURA</th>
+            <th >SPO2 </th>
+            <th >DOLOR</th>
+            <th >NOTAS </th>
           </tr>
         </thead>
         <tbody>
@@ -44,16 +44,9 @@
                     <td>{{ $medicion->dolor}}</td>
                     <td>{{ $medicion->notas}}</td>
                 </tr>
-                @endforeach
+          @endforeach
  
         </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="2"></td>
-            <td >TOTAL</td>
-            <td>$6,500.00</td>
-          </tr>
-        </tfoot>
       </table>
   </body>
 </html>
