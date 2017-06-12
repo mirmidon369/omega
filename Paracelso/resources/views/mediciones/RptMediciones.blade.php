@@ -5,34 +5,27 @@
     <!-- {!! Html::style('assets/css/pdf.css') !!} -->
   </head>
   <body>
-    <main>
-      <div id="details" class="clearfix">
-        <div id="invoice">
-          <h1>REPORTE</h1>
+          <h1><center>REPORTE DE SIGNOS VITALES </center> </h1>
           <div class="date">Fecha de Reporte: {{ $date }}</div>
-        </div>
-      </div>
       @include('persona.LstDatosBasicos')
-      <table border="1">
-        <thead>
-          <tr>
-            <th >#</th>
-            <th >GLASGOW</th>
-            <th >FREC. CARDIACA</th>
-            <th >FREC. RESPIRATORIA</th>
-            <th >PRESION SISTOLICA </th>
-            <th >FREC. CARDI </th>
-            <th >FREC. RESPI</th>
-            <th >TEMPERATURA</th>
-            <th >SPO2 </th>
-            <th >DOLOR</th>
-            <th >NOTAS </th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach($data as $medicion)
+    
+        <table class="table table-bordered table-condensed tabla_small table-fit">
+            <thead>
+                <th>Fecha</th>
+                <th>Peso</th>
+                <th>Talla</th>
+                <th>P.Sist.</th>
+                <th>P.Diast.</th>
+                <th>F.Card.</th>
+                <th>F.Resp.</th>
+                <th>Temp.°C</th>
+                <th>SPO2</th>
+                <th>Dolor</th>
+            </thead>
+            <tbody>
+                @foreach($mediciones as $medicion)
                 <tr>
-                    <td>{{ $medicion->created_at->toDateTimeString() }}</td>
+                    <td>1</td>
                     <td>{{ $medicion->peso}}</td>
                     <td>{{ $medicion->talla}}</td>
                     <td>{{ $medicion->presion_sistolica}}</td>
@@ -42,11 +35,9 @@
                     <td>{{ $medicion->temperatura}}</td>
                     <td>{{ $medicion->spo2}}</td>
                     <td>{{ $medicion->dolor}}</td>
-                    <td>{{ $medicion->notas}}</td>
                 </tr>
-          @endforeach
- 
-        </tbody>
-      </table>
-  </body>
+                @endforeach
+            </tbody>
+        </table>
+    </body>
 </html>
